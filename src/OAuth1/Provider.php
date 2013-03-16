@@ -176,16 +176,9 @@ class Provider
         }
     }
 
-    public function token()
+    public function getUserTokens()
     {
-        return isset($this->token) ? $this->token : false;
-    }
-
-    public function setToken(AccessToken $token)
-    {
-        $this->token = $token;
-
-        return $this;
+        return isset($this->tokens) ? $this->tokens : false;
     }
 
     public function call($method = 'GET', $url, array $params = array())
