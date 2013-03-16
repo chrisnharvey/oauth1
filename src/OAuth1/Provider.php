@@ -23,7 +23,7 @@ use \Exception;
  * @license    http://philsturgeon.co.uk/code/dbad-license
  */
 
-abstract class Provider
+class Provider
 {
 
     /**
@@ -100,42 +100,6 @@ abstract class Provider
     {
         return $this->$key;
     }
-
-    /**
-     * Returns the request token URL for the provider.
-     *
-     *     $url = $provider->url_request_token();
-     *
-     * @return string
-     */
-    abstract public function requestTokenUrl();
-
-    /**
-     * Returns the authorization URL for the provider.
-     *
-     *     $url = $provider->url_authorize();
-     *
-     * @return string
-     */
-    abstract public function authorizeUrl();
-
-    /**
-     * Returns the access token endpoint for the provider.
-     *
-     *     $url = $provider->url_access_token();
-     *
-     * @return string
-     */
-    abstract public function accessTokenUrl();
-
-    /**
-     * Returns basic information about the user.
-     *
-     *     $url = $provider->get_user_info();
-     *
-     * @return string
-     */
-    abstract public function getUserInfo();
 
     /**
      * Ask for a request token from the OAuth provider.
