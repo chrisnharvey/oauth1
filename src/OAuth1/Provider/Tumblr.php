@@ -15,9 +15,9 @@
 
 namespace OAuth\Provider;
 
-use \OAuth\OAuth1\Request\Resource;
+use \OAuth1\Request\Resource;
 
-class Tumblr extends \OAuth\OAuth1\Provider
+class Tumblr extends \OAuth1\Provider
 {
     public $name = 'tumblr';
 

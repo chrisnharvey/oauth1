@@ -2,9 +2,9 @@
 
 namespace OAuth\Provider;
 
-use \OAuth\OAuth1\Request\Resource;
+use \OAuth1\Request\Resource;
 
-class UbuntuOne extends \OAuth\OAuth1\Provider
+class UbuntuOne extends \OAuth1\Provider
 {
     public $name = 'ubuntuone';
 
@@ -29,5 +29,4 @@ class UbuntuOne extends \OAuth\OAuth1\Provider
     {
         // Get user data
     }
-
 }
