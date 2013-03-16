@@ -1,10 +1,10 @@
 <?php
 
-namespace OAuth\OAuth1\Signature;
+namespace OAuth1\Signature;
 
-use \OAuth\OAuth1\Request;
-use \OAuth\OAuth1\Consumer;
-use \OAuth\OAuth1\Token;
+use \OAuth1\Request;
+use \OAuth1\Consumer;
+use \OAuth1\Token;
 use \Exception;
 
 /**
@@ -15,7 +15,7 @@ use \Exception;
  *
  */
 
-class HMACSHA1 extends \OAuth\OAuth1\Signature
+class HMACSHA1 extends \OAuth1\Signature
 {
 
     protected $name = 'HMAC-SHA1';

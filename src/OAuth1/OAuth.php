@@ -1,6 +1,6 @@
 <?php
 
-namespace OAuth\OAuth1;
+namespace OAuth1;
 
 use \Exception;
 
@@ -80,7 +80,7 @@ class OAuth
     {
         if (is_array($input)) {
             // Encode the values of the array
-            return array_map(array('OAuth\OAuth1\OAuth', 'urlencode'), $input);
+            return array_map(array('OAuth1\OAuth', 'urlencode'), $input);
         }
 
         // Encode the input

@@ -11,11 +11,11 @@
  * @since      3.0.7
  */
 
-namespace OAuth\OAuth1\Signature;
+namespace OAuth1\Signature;
 
 use \Exception;
 
-class Plaintext extends \OAuth\OAuth1\Signature
+class Plaintext extends \OAuth1\Signature
 {
     protected $name = 'PLAINTEXT';
 

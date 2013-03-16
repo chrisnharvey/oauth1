@@ -1,10 +1,10 @@
 <?php
 
-namespace OAuth\OAuth1;
+namespace OAuth1;
 
-use \OAuth\OAuth1\Request;
-use \OAuth\OAuth1\Consumer;
-use \OAuth\OAuth1\Token;
+use \OAuth1\Request;
+use \OAuth1\Consumer;
+use \OAuth1\Token;
 
 abstract class Signature
 {

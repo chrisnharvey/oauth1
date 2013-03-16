@@ -1,6 +1,6 @@
 <?php
 
-namespace OAuth\OAuth1;
+namespace OAuth1;
 
 use \Exception;
 

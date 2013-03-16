@@ -1,10 +1,10 @@
 <?php
 
-namespace OAuth\OAuth1\Request;
+namespace OAuth1\Request;
 
-use \OAuth\OAuth1\Response;
+use \OAuth1\Response;
 
-class Token extends \OAuth\OAuth1\Request
+class Token extends \OAuth1\Request
 {
 
     protected $name = 'request';

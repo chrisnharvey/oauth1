@@ -1,16 +1,16 @@
 <?php
 
-namespace OAuth\OAuth1;
+namespace OAuth1;
 
-use \OAuth\OAuth1\Token;
-use \OAuth\OAuth1\Token\Request as RequestToken;
-use \OAuth\OAuth1\Token\Access as AccessToken;
-use \OAuth\OAuth1\Request\Token as TokenRequest;
-use \OAuth\OAuth1\Request\Authorize as AuthorizeRequest;
-use \OAuth\OAuth1\Request\Access as AccessRequest;
-use \OAuth\OAuth1\Request\Resource as ResourceRequest;
-use \OAuth\OAuth1\Consumer;
-use \OAuth\OAuth1\Signature;
+use \OAuth1\Token;
+use \OAuth1\Token\Request as RequestToken;
+use \OAuth1\Token\Access as AccessToken;
+use \OAuth1\Request\Token as TokenRequest;
+use \OAuth1\Request\Authorize as AuthorizeRequest;
+use \OAuth1\Request\Access as AccessRequest;
+use \OAuth1\Request\Resource as ResourceRequest;
+use \OAuth1\Consumer;
+use \OAuth1\Signature;
 use \Exception;
 
 /**
@@ -80,7 +80,7 @@ abstract class Provider
         if ( ! is_object($this->signature)) {
             // Convert the signature name into an object
             $class = str_replace('-', '', $this->signature);
-            $class = "\OAuth\OAuth1\Signature\\$class";
+            $class = "\OAuth1\Signature\\$class";
             $this->signature = new $class;
         }
 
