@@ -2,9 +2,10 @@
 
 namespace OAuth1\Provider;
 
+use \OAuth1\Provider;
 use \OAuth1\Request\Resource;
 
-class Flickr extends \OAuth1\Provider
+class Flickr extends Provider
 {
     public $name = 'flickr';
 

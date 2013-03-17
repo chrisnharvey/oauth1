@@ -2,13 +2,14 @@
 
 namespace OAuth1\Provider;
 
+use \OAuth1\Provider;
 use \OAuth1\Token;
 use \OAuth1\Token\Access;
 use \OAuth1\Consumer;
 use \OAuth1\Request\Resource;
 use \Exception;
 
-class Twitter extends \OAuth1\Provider
+class Twitter extends Provider
 {
 
     public $name = 'twitter';

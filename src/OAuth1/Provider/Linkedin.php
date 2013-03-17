@@ -12,9 +12,10 @@
 
 namespace OAuth1\Provider;
 
+use \OAuth1\Provider;
 use \OAuth1\Request\Resource;
 
-class Linkedin extends \OAuth1\Provider
+class Linkedin extends Provider
 {
     public $name = 'linkedin';
 
