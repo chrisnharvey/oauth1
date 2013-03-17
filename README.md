@@ -18,7 +18,7 @@ In this example we will authenticate the user using Twitter.
 ```php
 session_start();
 
-$oauth = \OAuth1\Provider\Twitter(array(
+$oauth = new \OAuth1\Provider\Twitter(array(
 	'id' => 'CLIENT_ID',
 	'secret' => 'CLIENT_SECRET',
 	'redirect_url' => 'URL_TO_THIS_PAGE'
