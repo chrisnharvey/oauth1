@@ -181,6 +181,23 @@ class Provider
         return isset($_REQUEST['oauth_token']);
     }
 
+    public function validateCallback(AccessToken $token)
+    {
+        if ($token->access_token === $_REQUEST['oauth_token']) {
+            
+            if ( ! isset($_REQUEST['oauth_verifier'])) {
+                throw new Exception('OAuth verifier was not found in request');
+            }
+
+            $token->verifier($_REQUEST['oauth_verifier']);
+
+            $this->tokens = $this->accessToken($token);
+
+        } else {
+            throw new Exception('Token mismatch');
+        }
+    }
+
     public function getUserTokens()
     {
         return isset($this->tokens) ? $this->tokens : false;
