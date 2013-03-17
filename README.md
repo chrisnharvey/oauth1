@@ -25,10 +25,7 @@ $oauth = \OAuth1\Provider\Twitter(array(
 ));
 
 if ($oauth->isCallback()) {
-	if ($oauth->validateCallback(unserialize($_SESSION['token']))) {
-		print_r($oauth->getUserTokens());
-		exit;
-	}
+	$oauth->validateCallback(unserialize($_SESSION['token']))
 } else {
 	$token = $oauth->requestToken();
 
