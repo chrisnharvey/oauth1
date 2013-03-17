@@ -144,38 +144,6 @@ class Provider
         ));
     }
 
-    public function process(callable $process = null, callable $callback = null)
-    {
-        if ( ! isset($_GET['oauth_token'])) {
-            // Get a request token for the consumer
-            $token = $this->requestToken();
-
-            // Get the URL to the twitter login page
-            $url = $this->authorize($token, array(
-                'oauth_callback' => $this->consumer->redirect_url,
-            ));
-
-            return $process($url, $token);
-        } else {
-            $token = $callback();
-
-            if (empty($token) or $token->access_token != $_REQUEST['oauth_token']) {
-                throw new Exception('OAuth token empty or does not match');
-            }
-
-            // Get the verifier
-            if (isset($_REQUEST['oauth_verifier'])) {
-                // Store the verifier in the token
-                $token->verifier($_REQUEST['oauth_verifier']);
-            }
-                
-            // Exchange the request token for an access token
-            $this->token = $this->accessToken($token);
-
-            return $this;
-        }
-    }
-
     public function isCallback()
     {
         return isset($_REQUEST['oauth_token']);
