@@ -149,7 +149,7 @@ class Provider
         return isset($_REQUEST['oauth_token']);
     }
 
-    public function validateCallback(AccessToken $token)
+    public function validateCallback(RequestToken $token)
     {
         if ($token->access_token === $_REQUEST['oauth_token']) {
 
