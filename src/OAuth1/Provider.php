@@ -178,7 +178,7 @@ class Provider
 
     public function isCallback()
     {
-        return isset($_GET['oauth_token']);
+        return isset($_REQUEST['oauth_token']);
     }
 
     public function getUserTokens()
