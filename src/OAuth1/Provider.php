@@ -176,6 +176,11 @@ class Provider
         }
     }
 
+    public function isCallback()
+    {
+        return isset($_GET['oauth_token']);
+    }
+
     public function getUserTokens()
     {
         return isset($this->tokens) ? $this->tokens : false;
