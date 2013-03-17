@@ -18,7 +18,7 @@ namespace OAuth1\Provider;
 use \OAuth1\Provider;
 use \OAuth1\Request\Resource;
 
-class Tumblr extends Provider
+class Tumblr extends Provider implements ProviderInterface
 {
     public $name = 'tumblr';
 

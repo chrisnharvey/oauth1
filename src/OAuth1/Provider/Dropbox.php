@@ -5,7 +5,7 @@ namespace OAuth1\Provider;
 use \OAuth1\Provider;
 use \OAuth1\Request\Resource;
 
-class Dropbox extends Provider
+class Dropbox extends Provider implements ProviderInterface
 {
     public $name = 'dropbox';
 

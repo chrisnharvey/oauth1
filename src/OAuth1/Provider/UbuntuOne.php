@@ -5,7 +5,7 @@ namespace OAuth1\Provider;
 use \OAuth1\Provider;
 use \OAuth1\Request\Resource;
 
-class UbuntuOne extends Provider
+class UbuntuOne extends Provider implements ProviderInterface
 {
     public $name = 'ubuntuone';
 

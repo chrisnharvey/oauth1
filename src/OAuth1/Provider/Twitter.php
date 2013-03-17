@@ -9,7 +9,7 @@ use \OAuth1\Consumer;
 use \OAuth1\Request\Resource;
 use \Exception;
 
-class Twitter extends Provider
+class Twitter extends Provider implements ProviderInterface
 {
 
     public $name = 'twitter';
