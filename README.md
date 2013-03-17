@@ -46,6 +46,22 @@ print_r($oauth->getUserInfo());
 
 If all goes well you should see a dump of the users tokens and data.
 
+
+### Calling OAuth 2 APIs using Guzzle
+
+You can also use this package to make calls to your respective APIs 
+using Guzzle.
+
+```php
+$client = new \OAuth1\Client('http://api.twitter.com/1.1');
+$client->setProvider($oauth)
+    ->setUserTokens($oauth->getUserTokens());
+
+echo $client->get('statuses/mentions_timeline.json')->send();
+```
+
+This example should show your Twitter mentions from the API along with the headers
+
 ## Contribute
 
 1. Check for open issues or open a new issue for a feature request or a bug
