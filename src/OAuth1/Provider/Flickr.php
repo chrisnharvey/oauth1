@@ -1,6 +1,6 @@
 <?php
 
-namespace OAuth\Provider;
+namespace OAuth1\Provider;
 
 use \OAuth1\Request\Resource;
 
