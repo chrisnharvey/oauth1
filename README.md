@@ -10,6 +10,7 @@ Authorize users with your application using multiple OAuth 1 providers.
 - Tumblr
 - Twitter
 - UbuntuOne
+- Vimeo
 
 ## Usage Example
 
