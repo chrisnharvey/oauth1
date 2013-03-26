@@ -6,7 +6,7 @@ use \OAuth1\Provider;
 use \OAuth1\Token;
 use \OAuth1\Token\Access;
 use \OAuth1\Consumer;
-use \OAuth1\Request\Resource;
+use \OAuth1\Client;
 use \Exception;
 
 class Twitter extends Provider implements ProviderInterface
@@ -33,34 +33,29 @@ class Twitter extends Provider implements ProviderInterface
 
     public function getUserInfo()
     {
-        if (! $this->token instanceof Access) {
-            throw new Exception('Token must be an instance of Access');
+        if (! $this->tokens instanceof Access) {
+            throw new Exception('Tokens must be an instance of Access');
         }
 
-        // Create a new GET request with the required parameters
-        $request = new Resource('GET', 
-'http://api.twitter.com/1.1/users/lookup.json', array(
-            'oauth_consumer_key' => $this->consumer->client_id,
-            'oauth_token' => $this->token->access_token,
-            'user_id' => $this->token->uid,
-        ));
+        $request = new Client('http://api.twitter.com/1.1');
+        $request->setUserTokens($this->tokens)
+            ->setProvider($this);
 
-        // Sign the request using the consumer and token
-        $request->sign($this->signature, $this->consumer, $this->token);
+        $response = $request->get("users/lookup.json?user_id={$this->tokens->uid}")->send()->json();
 
-        $user = current(json_decode($request->execute()));
+        $user = current($response);
 
         // Create a response from the request
         return array(
-            'uid' => $this->token->uid,
-            'nickname' => $user->screen_name,
-            'name' => $user->name ? $user->name : $user->screen_name,
-            'location' => $user->location,
-            'image' => $user->profile_image_url,
-            'description' => $user->description,
+            'uid' => $this->tokens->uid,
+            'nickname' => $user['screen_name'],
+            'name' => $user['name'] ? $user['name'] : $user['screen_name'],
+            'location' => $user['location'],
+            'image' => $user['profile_image_url'],
+            'description' => $user['description'],
             'urls' => array(
-              'Website' => $user->url,
-              'Twitter' => 'http://twitter.com/'.$user->screen_name,
+              'Website' => $user['url'],
+              'Twitter' => 'http://twitter.com/'.$user['screen_name'],
             ),
         );
     }
