@@ -48,7 +48,7 @@ print_r($oauth->getUserInfo());
 If all goes well you should see a dump of the users tokens and data.
 
 
-### Calling OAuth 2 APIs using Guzzle
+### Calling OAuth 1 APIs using Guzzle
 
 You can also use this package to make calls to your respective APIs 
 using Guzzle.
