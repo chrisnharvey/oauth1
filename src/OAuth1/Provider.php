@@ -23,7 +23,7 @@ use \Exception;
  * @license    http://philsturgeon.co.uk/code/dbad-license
  */
 
-class Provider
+abstract class Provider
 {
 
     /**
@@ -86,6 +86,14 @@ class Provider
 
         $this->consumer = new Consumer($options);
     }
+    
+    public abstract function requestTokenUrl();
+    
+    public abstract function authorizeUrl();
+    
+    public abstract function accessTokenUrl();
+    
+    public abstract function getUserInfo();
 
     /**
      * Return the value of any protected class variable.
