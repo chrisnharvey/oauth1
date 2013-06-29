@@ -87,13 +87,13 @@ abstract class Provider
         $this->consumer = new Consumer($options);
     }
     
-    public abstract function requestTokenUrl();
+    abstract public function requestTokenUrl();
     
-    public abstract function authorizeUrl();
+    abstract public function authorizeUrl();
     
-    public abstract function accessTokenUrl();
+    abstract public function accessTokenUrl();
     
-    public abstract function getUserInfo();
+    abstract public function getUserInfo();
 
     /**
      * Return the value of any protected class variable.
