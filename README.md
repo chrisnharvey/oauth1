@@ -1,5 +1,7 @@
 # OAuth 1.0 Composer Package
 
+_Deprecated: Use [league/oauth1-client](https://github.com/thephpleague/oauth1-client)._
+
 Authorize users with your application using multiple OAuth 1 providers.
 
 ## Supported Providers
